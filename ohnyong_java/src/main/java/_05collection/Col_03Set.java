@@ -34,9 +34,13 @@ public class Col_03Set {
         //2, 51, 6, 282 => 2가 3번 add됐지만 중복을 허용하지 않아 1개로만 나타난다.
 
         //포함여부확인
-        //contains
+        //contains()
         System.out.println(intSet.contains(3));
         System.out.println(intSet.contains(2));
 
+        //size()
+        System.out.println(intSet.size());
+        //isEmpty()
+        System.out.println(intSet.isEmpty());
     }
 }

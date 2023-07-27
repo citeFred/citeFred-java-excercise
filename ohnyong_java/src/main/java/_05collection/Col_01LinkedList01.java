@@ -13,11 +13,11 @@ public class Col_01LinkedList01 {
         // 하지만 값을 추가하거나, 삭제할 때는 빠르다. 아무렇게나 알아서 저장하기 때문에
 
         //LinkedList 선언 + (객체)생성
-        LinkedList<Integer> linkedList = new LinkedList<Integer>();
+        LinkedList<Integer> linkedList = new LinkedList<>();
 
         //LinkedList의 메서드를 사용 할 수 있다.
         //추가(c)
-        //add(element) 메서드로 생성한 Linked List에 element를 넣어보자.
+        //add(idx, element) 메서드로 생성한 Linked List에 element를 넣어보자.
         linkedList.add(1);
         linkedList.add(2);
         linkedList.add(3);
@@ -51,6 +51,5 @@ public class Col_01LinkedList01 {
         //clear() 메서드로 List의 모든 element를 삭제하자.
         linkedList.clear();
         //[]
-
     }
 }

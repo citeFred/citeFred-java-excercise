@@ -20,10 +20,10 @@ public class Col_02Queue {
         intQueue.add(5);
         intQueue.add(9);
 
-        //읽기(r)
-        //peek(item) 메서드로 Stack의 item을 읽을 수 있다.
-        //10 -> 15 -> 1 순서로 들어갔기 때문에, 맨 위에는 1이있다. 그래서 1이 나온다. basket같이 들어가기 때문에.
-        System.out.println(intQueue.peek());
+            //읽기(r)
+            //peek(item) 메서드로 Queue에 item을 읽을 수 있다.
+            //10 -> 15 -> 1 순서로 들어갔기 때문에, 맨 위에는 1이있다. 그래서 1이 나온다. basket같이 들어가기 때문에.
+            System.out.println(intQueue.peek());
 
         //추출(r-d)
         //poll() 메서드로 Queue에 추가한 element를 들어간 순서대로 꺼내면서 제거 한다.
