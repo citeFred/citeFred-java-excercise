@@ -1,3 +1,5 @@
+package _01variablesTypes;
+
 import java.util.Arrays;
 
 public class _03Variables {

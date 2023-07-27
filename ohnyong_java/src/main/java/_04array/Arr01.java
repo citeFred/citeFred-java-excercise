@@ -1,4 +1,4 @@
-package array;
+package _04array;
 
 public class Arr01 {
     public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class Arr01 {
 
         // 생성한 배열을 '순회' -> 배열의 값을 하나씩 뽑아서 조회한다.
         // 1) 단건 조회
-        System.out.println(intArray[0]); //index 0,1,2 처럼 접근
+        System.out.println(intArray2[0]); //index 0,1,2 처럼 접근
         // 2) 다건 조회 => 반복문을 이용하자 --------IMPORTANT---------
         for (int i = 0; i < intArray2.length; i++) {
             System.out.println(intArray2[i]); //i => index로 대입되니까

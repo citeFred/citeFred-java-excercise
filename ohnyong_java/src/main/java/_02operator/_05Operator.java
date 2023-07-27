@@ -1,3 +1,5 @@
+package _02operator;
+
 public class _05Operator {
     public static void main(String[] args) {
         //        - 산술 연산자Arithmetic Operators : +, -, *, /, %, <<, >>

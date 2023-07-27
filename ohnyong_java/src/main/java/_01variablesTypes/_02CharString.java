@@ -1,3 +1,5 @@
+package _01variablesTypes;
+
 public class _02CharString {
     public static void main(String[] args){
 //        char a = '안';

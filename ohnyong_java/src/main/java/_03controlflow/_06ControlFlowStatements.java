@@ -1,3 +1,5 @@
+package _03controlflow;
+
 public class _06ControlFlowStatements {
     public static void main(String[] args) {
         //제어문(프로그램의 실행 방향을 제어하는 기능)

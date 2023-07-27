@@ -1,4 +1,4 @@
-// import
+package _01variablesTypes;// import
 
 import java.util.Scanner;
 

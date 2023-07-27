@@ -1,3 +1,5 @@
+package _01variablesTypes;
+
 public class _01VarFinal {
     public static void main(String[] args) {
 //        변수(int라는 데이터 타입을 지정하면서 Memory(방)의 크기를 결정한다.

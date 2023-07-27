@@ -1,3 +1,5 @@
+package _03controlflow;
+
 import java.util.Scanner;
 
 public class _08MultiplicationTable {
