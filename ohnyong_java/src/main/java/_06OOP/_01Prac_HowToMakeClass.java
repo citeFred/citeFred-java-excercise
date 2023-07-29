@@ -57,6 +57,8 @@ public class _01Prac_HowToMakeClass {
     int x;
     int y;
     //[2-2] 클래스 변수를 선언하는 경우
+    int num1;
+    int num2;
     int sum;
     static int z;
 
@@ -67,9 +69,9 @@ public class _01Prac_HowToMakeClass {
     }
 
     //[4] 메서드(Method) 만들기 (기능, 동작)
-    int Summary(int x, int y){
+    int Summary(int num1, int num2){
         //[4-2]
-        sum=x+y;
+        sum=num1+num2;
         return sum;
     }
 }

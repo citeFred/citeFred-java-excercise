@@ -1,5 +1,7 @@
 package _06OOP;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -30,8 +32,14 @@ public class Main {
 
         //예습 클래스도 여기에 객체를 생성해보자.
         _01Prac_HowToMakeClass calculator1 = new _01Prac_HowToMakeClass();
+        Scanner sc = new Scanner(System.in);
         System.out.println(calculator1);
-        //calculator1.toString()
+        System.out.println("Num1 입력");
+        calculator1.num1 = sc.nextInt();
+        System.out.println("Num2 입력");
+        calculator1.num2 = sc.nextInt();
+        calculator1.Summary(calculator1.num1, calculator1.num2);
+        System.out.println(calculator1.sum);
 
         //---------------------------
         System.out.println("-------초기값 설정 테스트 내부 접근--------");
