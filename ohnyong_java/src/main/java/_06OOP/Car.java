@@ -15,7 +15,7 @@ public class Car {
 
     // 1) 고유 데이터 영역
     String company; //자동차 회사
-    String model = "SM5";   //자동차 모델 <- 초기화 내부 접근
+    String model = "X7 : SAV";   //자동차 모델 <- 초기화 내부 접근
     String color;   //자동차 색
     double price;   //자동차 가격
 

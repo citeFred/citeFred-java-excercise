@@ -39,7 +39,7 @@ public class Main {
         System.out.println("Num2 입력");
         calculator1.num2 = sc.nextInt();
         calculator1.Summary(calculator1.num1, calculator1.num2);
-        System.out.println(calculator1.sum);
+        System.out.println("계산결과 : "+calculator1.num1+" + "+calculator1.num2+" = "+calculator1.sum);
 
         //---------------------------
         System.out.println("-------초기값 설정 테스트 내부 접근--------");
@@ -48,23 +48,23 @@ public class Main {
         //초기값 기본 값 확인 : 초기값을 준 것은 그 값이 들어가고, 아닌 값은 default value가 set 된다.
         System.out.println("--------------------");
         System.out.println("car.model : "+car.model); //<- 내부에서 초기화 한 것
-        System.out.println("car.model : "+car.color);
+        System.out.println("car.color : "+car.color);
         System.out.println("--------------------");
-        System.out.println("car.model : "+car.speed);
-        System.out.println("car.model : "+car.gear);
-        System.out.println("car.model : "+car.lights);//<- 내부에서 초기화 한 것
+        System.out.println("car.speed : "+car.speed);
+        System.out.println("car.gear : "+car.gear);
+        System.out.println("car.lights : "+car.lights);//<- 내부에서 초기화 한 것
         System.out.println("--------------------");
-        System.out.println("car.model : "+car.tire);//<- 내부에서 초기화 한 것
-        System.out.println("car.model : "+car.door);
+        System.out.println("car.tire : "+car.tire);//<- 내부에서 초기화 한 것
+        System.out.println("car.door : "+car.door);
 
         System.out.println("-------초기값 설정 테스트 외부 접근--------");
         //필드 사용(<-외부 접근 외부에서(메인에서) 객체 내 초기화 한 것
         car.color = "blue";
         car.speed = 100;
         car.lights = false;//<- 내부에서 초기화 한 것인데 외부에서 한번 더 필드 변경한 것
-        System.out.println("car.model : "+car.color);
-        System.out.println("car.model : "+car.speed);
-        System.out.println("car.model : "+car.lights);//<- 외부에서 재설정하여 이것이 적용 된다.
+        System.out.println("car.color : "+car.color);
+        System.out.println("car.speed : "+car.speed);
+        System.out.println("car.lights : "+car.lights);//<- 외부에서 재설정하여 이것이 적용 된다.
 
         System.out.println("-------아래 Car4는 메서드 이용 접근 테스트--------");
         Car car4 = new Car(); //객체 생성
