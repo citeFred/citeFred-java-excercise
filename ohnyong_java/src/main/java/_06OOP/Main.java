@@ -7,7 +7,7 @@ public class Main {
 
         Car car0 = new Car(); //<-- 클래스의 기본 생성자를 호출하여 객체를 생성했다. 인스턴스를 호출, 인스턴스화 했다고도 부른다.
         System.out.println(car0); // _06OOP.Car@251a69d7  <-- 주소값이 출력된다.
-        car0.gasPedal(80.51);
+        //car0.gasPedal(80.51);
         System.out.println("car0의 속도는 : "+car0.speed);
 
         //-------------------
@@ -65,5 +65,20 @@ public class Main {
         System.out.println("car.model : "+car.color);
         System.out.println("car.model : "+car.speed);
         System.out.println("car.model : "+car.lights);//<- 외부에서 재설정하여 이것이 적용 된다.
+
+        System.out.println("-------아래 Car4는 메서드 이용 접근 테스트--------");
+        Car car4 = new Car(); //객체 생성
+
+        System.out.println("(패달밟기전)gear = "+car4.gear);
+        double speed = car4.gasPedal(100, 'D');
+        System.out.println("speed = "+ speed);
+        boolean lights = car4.onOffLights();
+        System.out.println("lights = "+lights);
+        System.out.println("(패달밟기후)gear = "+car4.gear);
+
+        System.out.println("-------아래 Car4는 가변 ... 길이 메서드 이용 접근 테스트--------");
+        car.carSpeeds(120, 50);
+        System.out.println("--------");
+        car.carSpeeds(87, 90, 64);
     }
 }
