@@ -4,10 +4,11 @@ import java.util.Scanner;
 
 public class Solution {
     int selectNum;
+    int calNum;
     int num1;
     int num2;
     int result;
-
+    Scanner sc = new Scanner(System.in);
 
     //Constructor 생성
     public Solution() {
@@ -38,28 +39,34 @@ public class Solution {
             } else if (selectNum == 4) {
                 System.out.println("나누기 연산을 시작합니다.");
                 break;
-            } else if ((selectNum >= 1) || (selectNum <= 4)) {
-                System.out.println("잘못된 값을 입력했습니다.");
-                tryAgain();
+            } else {
+                System.out.println("잘못된 값을 입력했습니다.\n계산기를 다시 사용하시겠습니까?\n[1]예 [2]아니오");
+                int tryNum = sc.nextInt();
+                if (tryNum == 1) {
+                    showMenu();
+                } else {
+                    System.out.println("프로그램을 종료합니다.");
+                    exit();
+                }
                 break;
             }
+
         }
+            inputNum(selectNum);
+
     }
 
-    //원하는 연산 선택 번호를 잘못 입력 했을 때 프로그램 이용or선택 메서드 tryAgain()
-    void tryAgain(){
-        System.out.println("계산기를 다시 사용하시겠습니까? [1]예 [2]아니오");
-        Scanner sc = new Scanner(System.in);
-        int tryNum = sc.nextInt();
-        if(tryNum == 1){
-            showMenu();
-            selectNum = 1;
-            chooseMenu(selectNum);
-        }else{
-            System.out.println("프로그램을 종료합니다.");
-            exit();
-        }
-    }
+void inputNum(int selectNum) {
+        calNum = selectNum;
+        //Num1 입력
+        System.out.println("num1을 입력해주세요");
+        num1 = sc.nextInt();
+        //Num2 입력
+        System.out.println("num2를 입력해주세요");
+        num2 = sc.nextInt();
+
+        calculate(calNum, num1, num2);
+}
 
     //프로그램 종료 선택 시 Run을 종료하는 메서드 exit()
     void exit() {
@@ -67,16 +74,16 @@ public class Solution {
     }
 
     //메뉴에 따라 선택된 연산을 연결 후 반환 된 결과를 출력 하는 메서드 calculate()
-    int calculate(int selectNum, int num1, int num2) {
-        if (selectNum == 1) {
+    int calculate(int calNum, int num1, int num2) {
+        if (calNum == 1) {
             result = summary(num1, num2);
             System.out.println("result : " + num1 + "+" + num2 + "=" + result);
 
-        } else if (selectNum == 2) {
+        } else if (calNum == 2) {
             result = subtract(num1, num2);
             System.out.println("result : " + num1 + "-" + num2 + "=" + result);
 
-        } else if (selectNum == 3) {
+        } else if (calNum == 3) {
             result = multiplication(num1, num2);
             System.out.println("result : " + num1 + "*" + num2 + "=" + result);
 
@@ -88,6 +95,7 @@ public class Solution {
         return result;
     }
 
+    //-----------------연산 메서드-------------------
     //두 수의 합를 구하는 메서드 summary()
     int summary(int num1, int num2) {
         int result = num1 + num2;
@@ -111,4 +119,6 @@ public class Solution {
         result = num1 / num2;
         return result;
     }
+
+
 }
