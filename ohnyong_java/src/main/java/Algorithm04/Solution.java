@@ -21,8 +21,8 @@ public class Solution {
     }
 
     void intputAngle() {
-        System.out.println("각도를 입력해주세요.");
         while (true) {
+            System.out.println("각도를 입력해주세요.");
             angleInputNum = sc.nextInt();
             if (angleInputNum < 0 || angleInputNum > 180) {
                 System.out.println("각도는 0~180도까지만 입력해주세요.");
