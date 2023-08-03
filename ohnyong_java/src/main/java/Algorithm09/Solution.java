@@ -58,7 +58,7 @@ x 좌표 (x, y)를 차례대로 담은 정수 배열 dot이 매개변수로 주�
         arr = new int[2];
         while (true) {
             x = sc.nextInt();
-            if (x < -500 && x > 500) {
+            if (x < -500 || x > 500) {
                 System.out.println("좌표 값은 -500~500 사이의 값을 입력해주십시오.");
                 continue;
             }
@@ -69,7 +69,7 @@ x 좌표 (x, y)를 차례대로 담은 정수 배열 dot이 매개변수로 주�
         System.out.println("좌표의 y값을 입력하십시오.");
         while (true) {
             y = sc.nextInt();
-            if (y < -500 && y > 500) {
+            if (y < -500 || y > 500) {
                 System.out.println("좌표 값은 -500~500 사이의 값을 입력해주십시오.");
                 continue;
             }
