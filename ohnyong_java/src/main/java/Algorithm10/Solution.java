@@ -32,7 +32,7 @@ public class Solution {
         System.out.print("(원)==>");
         while (true) {
             pocketMoney = sc.nextInt();
-            if (pocketMoney < 0 && pocketMoney > 1000000) {
+            if (pocketMoney < 0 || pocketMoney > 1000000) {
                 System.out.println("너무 많은 금액입니다. 100만원 이하로 입력해주세요.");
                 continue;
             }
