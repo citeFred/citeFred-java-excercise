@@ -42,11 +42,27 @@ public class Solution {
 
     void input() {
         System.out.println("요리의 이름을 입력해주세요.");
-        inputTitle = sc.next();
-        System.out.println("레시피의 별점을 입력해주세요.");
-        inputStar = sc.nextDouble();
-        System.out.println("레시피는 총 몇단계로 구성되어 있습니까?");
-        inputRecipeLevel = sc.nextInt();
+        inputTitle = sc.nextLine();
+        while (true) {
+            System.out.println("레시피의 별점을 입력해주세요.");
+            inputStar = sc.nextDouble();
+            if (inputStar < 1.00 || inputStar > 5.00){
+                System.out.println("별점은 1.00~5.00까지만 입력해주세요.");
+                continue;
+            }
+            System.out.println("입력하신 값은 '"+inputStar+"'로 소수점을 제외한 정수로 변환됩니다!");
+            break;
+        }
+        while (true) {
+            System.out.println("레시피는 총 몇단계로 구성되어 있습니까?(최대10단계)");
+            inputRecipeLevel = sc.nextInt();
+            if (inputRecipeLevel < 1 || inputRecipeLevel > 10){
+                System.out.println("레시피는 1~10단계로만 구성해주세요");
+                continue;
+            }
+            break;
+        }
+
 
         sc.nextLine(); //초기화
 
@@ -74,6 +90,7 @@ public class Solution {
     }
 
     void outputEnd(String recipeTitle, int recipeStar, double recipeStarRatio, String[] recipeTextArr) {
+        System.out.println("==============================<< R E C I P E >>==============================");
         System.out.printf("[ 백종원 %s 만들기 ]\n", recipeTitle);
         System.out.printf("별점 : %d (%.1f%%)\n", recipeStar, recipeStarRatio);
         int i;
@@ -81,6 +98,21 @@ public class Solution {
         for (i = 0; i < recipeTextArr.length; i++) {
             n = i + 1;
             System.out.printf("%d. %s\n", n, recipeTextArr[i]);
+        }
+        System.out.println("==============================<< T H A N K U >>==============================");
+        tryAgain();
+    }
+
+    void tryAgain(){
+        System.out.println("계속해서 레시피를 작성하시겠습니까? [1] YES / [2] NO");
+        int tryNum;
+        tryNum = sc.nextInt();
+        if(tryNum == 1){
+            System.out.println("새로운 레시피를 입력합니다.");
+            run();
+        } else if (tryNum == 2) {
+            System.out.println("이용해주셔서 감사합니다^^~");
+            System.exit(0);
         }
     }
 }
