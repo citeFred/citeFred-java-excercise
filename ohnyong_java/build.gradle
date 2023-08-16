@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'org.example'
@@ -17,5 +18,13 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-sourceCompatibility = JavaVersion.VERSION_15
-targetCompatibility = JavaVersion.VERSION_15
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+wrapper {
+    gradleVersion = '8.0'
+}
+
+application {
+    mainClassName = 'JavaPrac2week.Main' // 메인 클래스의 경로를 지정해주세요
+}
