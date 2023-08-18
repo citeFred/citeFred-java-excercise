@@ -1,8 +1,7 @@
 package Algorithm13;
 
 
-
-class Solution {
+public class Solution {
     static String my_string = "REVERSE TEST";
     //Solution을 클래스 메소드로 선언
     public static String solution(String my_string) {
