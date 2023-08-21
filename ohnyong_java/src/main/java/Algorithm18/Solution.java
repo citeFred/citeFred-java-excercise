@@ -17,34 +17,38 @@ public class Solution {
 
     public int[] solution(int[] arr) {
 
-
-        if (arr.length <= 1) {
-            int[] arr2 = new int[1];
-            arr2[0] = -1;
-            return arr2;
+        if (arr.length <= 1) { // 1. 첫 조건 요소가 1개인 경우.
+            int[] answer = {-1};
+            return answer;
         }
-        int minValue = arr[0]; // 첫 번째 요소로 초기화
-        for(int i=1;i<arr.length;i++){
+
+        int minValue = arr[0]; // 2. 최소값 초기화
+        for(int i=1;i<arr.length;i++){ // 3. 최소값 찾기
             if(arr[i] < minValue){
                 minValue = arr[i];
             }
         }
-        int cnt = 0;
+
+        int cnt = 0; //새로 만들 배열(array)이라 정적으로 cnt가 새로 필요함. -1해도되지않나?최소값만뺼껀데..?
         for(int i=0;i<arr.length;i++){
             if(arr[i] != minValue){
                 cnt++;
             }
         }
-        int[] answer= new int[cnt];
-        int j=0;
-        for(int i=0;i<answer.length;i++){
+
+        int[] answer= new int[cnt]; //결과배열 선언및 초기화
+        int j=0; //새 배열에 대한 index번호 새로 초기화, 길이가 다르니까.
+        //for(int i=0;i<answer.length;i++){ // answer 배열의 길이가 아니라 arr의 길이를 탐색해야 한다.
+        for(int i=0;i<arr.length;i++){
             if(arr[i] != minValue){
                 answer[j] = arr[i];
                 j++;
             }
         }
 
+
         return answer;
+
     }
 
     public static void main(String[] args){
