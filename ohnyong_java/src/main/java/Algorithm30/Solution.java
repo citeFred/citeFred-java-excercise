@@ -28,6 +28,10 @@ N과 M은 100보다 작거나 같고, 행렬의 원소는 절댓값이 100보다
 4 4 4
 6 6 6
 5 6 100
+
+문제
+N*M크기의 두 행렬 A와 B가 주어졌을 때,
+두 행렬을 더하는 프로그램을 작성하시오.
 */
 
 
@@ -44,8 +48,6 @@ public class Solution {
                 answer[i][j] = arrA[i][j] + arrB[i][j];
             }
         }
-
-
         return answer;
     }
     public static void main(String[] args) {
@@ -57,8 +59,7 @@ public class Solution {
         //answer Sample {{4,4,4}, {6,6,6}, {5,6,100}};
         System.out.println(Arrays.deepToString(sol.Solution(arrA, arrB)));
         /*result
-        *
-            > Task :Solution.main()
-            [[4, 4, 4], [6, 6, 6], [5, 6, 100]]*/
+> Task :Solution.main()
+ [[4, 4, 4], [6, 6, 6], [5, 6, 100]]*/
     }
 }

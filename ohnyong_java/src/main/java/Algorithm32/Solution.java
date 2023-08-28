@@ -61,6 +61,8 @@ Aa0FfBb1GgCc2HhDd3IiEe4Jj
         //   ---->[2][0] -> ...
         //  j++를 통해서는 [j][]로 돌아야하고
         //  i++를 통해서는 [][i]가 돌아야 한다.
+
+//문제 칠판에 붙여진 단어들이 주어질 때, 영석이가 세로로 읽은 순서대로 글자들을 출력하는 프로그램을 작성하시오.
 public class Solution {
 
     public String Solution(String[][] quizNote) {
@@ -74,7 +76,8 @@ public class Solution {
 
         for (int i = 0; i < maxLength; i++) { //열 순회 한 행마다 각 값들을 돌아봄
             for (int j = 0; j < quizNote.length; j++) { //여기서 행을 순회함 첫번째줄 두번째줄... 다섯번째줄
-                String[] row = quizNote[j]; // {"A",  {"a",{"0", {"a",  {"P", 처럼 각 행의 idx=0인, 1인 ... 값을 새로운 행으로 잠시 저장 - - - - - - 가로 열 형태로 저장
+                String[] row = quizNote[j]; // {"A",  {"a",{"0", {"a",  {"P", 처럼 각 행의 idx=0인, 1인 ... 값을 새로운 행으로 잠시 저장
+                                            // - - - - - - 가로 열 형태로 저장
                 if (i < row.length) { //임시 가공 저장된 위 첫 인덱스들만의 행의 각 열  - - - - - - - <각 항목을 순회
                     answer += row[i]; // 따라서 원본의 모든 행들의 [0]번째 값들을 answer에 저장.
                 } //이후로 반복하며 [1]번째, [2]번째 처럼 열들의 값을 임시 행으로 저장하고 출력을 반복
