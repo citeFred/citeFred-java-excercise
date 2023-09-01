@@ -63,9 +63,9 @@ public class _03Variables {
 
         //3) Wrapper Class
         int number = 21;
-        Integer num = new Integer(number); //<- 이 과정을 boxing 한다고 함
+        //Integer num = new Integer(number); //<- 이 과정을 boxing 한다고 함
         //위 표현은 'Integer(int)' is deprecated 옛날 방식이라서 이렇게 안해도 된다.
-        System.out.println(num);
+        //System.out.println(num);
 
         Integer num2 = 23;
         System.out.println(num2);
