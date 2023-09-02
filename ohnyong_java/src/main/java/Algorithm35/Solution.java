@@ -35,10 +35,41 @@ s	                result
 "123"	            123
  * */
 public class Solution {
+    String[][] numStrArr = {
+            {"0", "zero"},
+            {"1", "one"},
+            {"2", "two"},
+            {"3", "three"},
+            {"4", "four"},
+            {"5", "five"},
+            {"6", "six"},
+            {"7", "seven"},
+            {"8", "eight"},
+            {"9", "nine"}
+    };
+    public Solution(){
 
-    public String Solution(String s){
-
+    }
+    String Solution(String s){
         String answer = "";
+
+        for(int i=0; i<s.length();){ //1) s문자를 하나씩 순회 할 때, numString의 길이만큼 i가 초기화 되도록(시작점이 문자의 맨뒤로 이동하면서 다시 숫자를 만나게함)
+            boolean flag = false;
+            for(int j=0; j< numStrArr.length;j++){ //2)위 배열도 하나씩 순회한다. -> 비교를 위해서.
+                String numNumeric= numStrArr[j][0]; //숫자로나타난 문자는 [0][0] 0 , [1][0] 1, ...
+                String numString= numStrArr[j][1];//문자로나타난 숫자는 [0][1]일때 zero, [1][1] one, ...
+                if(s.startsWith(numString, i)){
+                    answer += numNumeric; //반환값에 숫자를 누적함,
+                    i += numString.length(); //**** 이부분이 s로입력된 문자를 쭉 지나가는데 다음 문자로 커서를 이동시키기위해 i를 문자 길이만큼 초기화 시킴, 그럼 다시 위로 반복문 돌때 그다음문자를 찾게됨
+                    flag = true;
+                }
+            }
+            if(!flag){
+                // s를 순회하는데
+                answer += s.charAt(i);
+                i++;
+            }
+        }
         return answer;
     }
     public static void main(String[] args) {
