@@ -1,5 +1,6 @@
 # Java basic study repository
 프로그래밍 언어 Java를 공부하고 코드 작성 실습과 배운점, 학습요약을 하는 공간입니다. 
+알고리즘 문제를 풀어보면서 기본기를 계속해서 연습해보고 도전해보는 공간입니다!
 
 ## 🖥️ 스터디 저장소 소개
 * 'Java의 정석'을 기준으로 Java에 대한 이해, 교재 관련 실습 진행
@@ -18,5 +19,5 @@
 - **OS** : MacOS
 
 ### 👋🏻 Contact
-- **Email** : admin@yzpocket.com
-- **Blog** : https://blog.yzpocket.com/ 
+- **Email** : citefred@yzpocket.com
+- **Blog** : https://www.citefred.com
