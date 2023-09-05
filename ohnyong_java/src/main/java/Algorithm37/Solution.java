@@ -33,7 +33,11 @@ public class Solution {
         int i = commands[0];
         int j = commands[1];
         int k = commands[2];
-        return Arrays.stream(Arrays.copyOfRange(array, i, k)).toArray(); //array의 i~k 번째 요소들을 복사해서 새로운 배열만들기
+        int[] subArr = Arrays.copyOfRange(array, i-1, j-1); //array의 i~j 번째 요소(index는 0부터라 -1)들을 복사해서 새로운 배열만들기
+        int[] result = new int[1];
+        result[0] = subArr[k-1];
+        return result;
+
     }
 // Arrays.copyOfRange(배열, 시작인덱스, 끝인덱스) -> 배열을 시작~끝 범위 인덱스들을 복사해서 추출
 
