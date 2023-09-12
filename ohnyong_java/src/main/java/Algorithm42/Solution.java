@@ -40,7 +40,6 @@ a	b	n	result
 public class Solution {
     public int Solution(int a, int b, int n){ //a= 줘야되는 병수, b= 마트가 주는 병수(a에 따라 변함, 1=n/2), n=가지고있는 병수
         int answer = 0;
-
         // n20 -> (n20/a2) = b10
         // n10 -> (n10/a2) = b5
         // n5 -> (n5/a2) = b2 + 1save (n%a)
@@ -53,9 +52,6 @@ public class Solution {
             int savedBottle = n % a; // 그런데 홀수인경우 교환이 안될수도 있다. 저장한다.
             n = fullBottle + savedBottle; //반복문이 돌수있도록 교환된것=먹을것이기 때문에 똑같고, 교환못하고 남은것을 더해서 다시 교환하러 간다.
         }
-
-
-
         return answer;
     }
     public static void main(String[] args) {
