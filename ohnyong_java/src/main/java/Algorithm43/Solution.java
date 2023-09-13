@@ -1,8 +1,8 @@
 package Algorithm43;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.TreeSet;
 
 /*명예의 전당 (1)
 문제 설명
@@ -38,29 +38,60 @@ score               //10    100      20         150                1            
 입출력 예
 k	score	result
 3	[10, 100, 20, 150, 1, 100, 200]	[10, 10, 10, 20, 20, 100, 100]*/
-public class Solution {
-    public static List<Integer> solution(int k, int[] score) {
-        List<Integer> result = new ArrayList<>();
-        List<Integer> hallOfFame = new ArrayList<>();
+//public class Solution {
+//    public static List<Integer> solution(int k, int[] score) {
+//        List<Integer> result = new ArrayList<>();
+//        TreeSet<Integer> hallOfFame = new TreeSet<>(); // TreeSet 사용
+//
+//        for (int i = 0; i < score.length; i++) {
+//            hallOfFame.add(score[i]);
+//            if (hallOfFame.size() > k) {
+//                hallOfFame.pollFirst(); // 가장 작은 값을 제거
+//            }
+//            result.add(hallOfFame.first()); // 명예의 전당 중 가장 작은 값을 결과에 추가
+//        }
+//        return result;
+//    }
+//
+//    public static void main(String[] args) {
+//        int k = 3;
+//        int[] score = {10, 100, 20, 150, 1, 100, 200};
+//
+//        List<Integer> result = solution(k, score);
+//
+//        System.out.println(result); // [10, 10, 10, 20, 20, 100, 100]
+//    }
+//}
+import java.util.*;
 
-        for (int i = 0; i < score.length; i++) {
-            hallOfFame.add(score[i]);
-            Collections.sort(hallOfFame, Collections.reverseOrder());
-            result.add(hallOfFame.get(0));
-            if(hallOfFame.size()>1){
-                result.add(hallOfFame.get(1));
-                result.add(hallOfFame.get(2));
+class Solution {
+    public static int[] solution(int k, int[] score) {
+        int[] answer = new int[score.length];
+        // 명예의 전당 (매일 변경)
+        List<Integer> showList = new ArrayList();
+
+        for(int i=0; i < score.length; i++) {
+            if(i < k) {
+                showList.add(score[i]);
             }
+            else {
+                // score[i] 와 list 내 값 비교
+                if(score[i] >= showList.get(0)){
+                    showList.remove(0);
+                    showList.add(score[i]);
+                }
+            }
+            Collections.sort(showList);
+            answer[i] = showList.get(0);
         }
-        return result;
+        return answer;
     }
+        public static void main(String[] args) {
+            int k = 3;
+            int[] score = {10, 100, 20, 150, 1, 100, 200};
 
-    public static void main(String[] args) {
-        int k = 3;
-        int[] score = {10, 100, 20, 150, 1, 100, 200};
+            int[] result = solution(k, score);
 
-        List<Integer> result = solution(k, score);
-
-        System.out.println(result); // [10, 10, 10, 20, 20, 100, 100]
-    }
+            System.out.println(Arrays.toString(result));
+        }
 }
