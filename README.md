@@ -8,7 +8,7 @@
 * 실습한 내용을 개발 블로그의 TIL, WIL 등으로 기록하며 회고
 
 ## 👋🏻 Contact
-- **Email** : citefred@yzpocket.com
+- **Email** : citefred@gmail.com
 - **Blog** : https://www.citefred.com
 
 ## 🕰️ 학습 기간
