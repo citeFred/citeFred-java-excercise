@@ -66,30 +66,36 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 public class Solution3 {
     public int Solution3(int[][] jobs){
-        Arrays.sort(jobs, (a, b) -> a[0] - b[0]); // 요청 시간 오름차순 정렬
-        // processQueue를 만들어서 작업을 넣는데, 우선순위 큐를 통해 jobs[i][j]에서 j=1의 값들에 따라서 작은값들이 유리함.
+        Arrays.sort(jobs, (a, b) -> a[0] - b[0]); // 주어진 작업 배열 jobs를 작업의 요청 시간인 a[0]을 기준으로 오름차순 정렬합니다.
 
+        // processQueue를 만들어서 작업을 넣는데, 우선순위 큐를 통해 jobs[i][j]에서 j=1의 값들에 따라서 작은값들이 유리함.
+        //우선순위 큐인 processQueue를 생성. 이 큐는 작업의 소요 시간인 a[1]을 기준으로 오름차순으로 정렬
         PriorityQueue<int[]> processQueue = new PriorityQueue<>((a, b) -> a[1] - b[1]); // 소요 시간 오름차순 우선순위 큐
+
         int time = 0; // 현재까지의 시간
         int total = 0; // 총 소요 시간
 
-        int index = 0;
+        int index = 0; // 작업 배열을 순회하기 위한 인덱스 index
+
         while (index < jobs.length || !processQueue.isEmpty()) {
-            while (index < jobs.length && jobs[index][0] <= time) {
+            if (index < jobs.length && jobs[index][0] <= time) {
                 processQueue.offer(jobs[index]);
                 index++;
+                continue;
             }
 
             if (!processQueue.isEmpty()) {
                 int[] job = processQueue.poll();
                 time += job[1];
                 total += time - job[0];
-            } else {
+            } else if (index < jobs.length) {
+                // 작업큐가 비어있으면서 아직 작업이 남아 있다면,
+                // 다음 작업의 요청 시간으로 시간을 업데이트
                 time = jobs[index][0];
             }
         }
 
-        return total / jobs.length;
+        return total / jobs.length; // 평균
     }
 
     public static void main(String[] args){
