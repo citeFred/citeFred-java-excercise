@@ -79,7 +79,7 @@ public class Solution3 {
 
         while (index < jobs.length || !processQueue.isEmpty()) {
             if (index < jobs.length && jobs[index][0] <= time) {
-                processQueue.offer(jobs[index]);
+                processQueue.add(jobs[index]);
                 index++;
                 continue;
             }
