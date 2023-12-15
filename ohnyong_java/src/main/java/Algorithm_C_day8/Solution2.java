@@ -86,11 +86,17 @@ public class Solution2 {
         return answer;
     }
 
+    //bfs 메서드는 미로에서 너비 우선 탐색(BFS)을 수행하는 데 사용됩니다.
+    // 시작 지점인 좌상단(0, 0)에서 시작하여 미로를 탐색하고,
+    // 시작점으로부터의 최소 거리로 visited 배열을 업데이트합니다.
     public void bfs(int[][] maps, int[][] visited) {
         int x = 0;
         int y = 0;
         visited[x][y] = 1;
         //큐를 활용해서 탐색을 진행하고, 이동할 수 있는 경우에는 visited 배열에 거리를 업데이트하고 큐에 추가
+        //BFS는 큐를 사용하여 구현됩니다. 메서드는 시작 셀로 큐를 초기화하고,
+        // 큐가 비어 있을 때까지 인접한 셀을 계속 탐색합니다.
+        // 탐색 중에는 인접한 셀의 거리를 업데이트하고 큐에 추가합니다.
         Queue<int[]> queue = new LinkedList<>();
         queue.add(new int[]{x, y});
 
